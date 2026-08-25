@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TRAGO - Sign Up</title>
+
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="signup-card">
+
+        <div class="logo">T</div>
+
+        <h1>Create Your Account</h1>
+
+        <p class="subtitle">
+            Start your language learning journey with TRAGO ✨
+        </p>
+
+        <form id="signupForm">
+
+            <div class="input-box">
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Full Name"
+                    required
+                >
+            </div>
+
+            <div class="input-box">
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    required
+                >
+            </div>
+
+            <div class="input-box">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create Password"
+                    required
+                >
+            </div>
+
+            <div class="input-box">
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm Password"
+                    required
+                >
+            </div>
+
+            <div class="input-box">
+                <select id="language" required>
+                    <option value="" disabled selected>
+                        Choose a language to learn
+                    </option>
+                    <option value="english">English</option>
+                    <option value="korean">Korean</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                    <option value="german">German</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="chinese">Chinese</option>
+                </select>
+            </div>
+
+            <button type="submit">
+                Create Account
+            </button>
+
+            <p class="login-text">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+            <p class="home-link">
+                <a href="home.html">← Back to Home</a>
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="signup.js"></script>
+
+</body>
+</html>

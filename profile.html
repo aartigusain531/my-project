@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TRAGO - Profile</title>
+
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+<div class="profile-page">
+
+    <!-- Header -->
+    <header class="profile-header">
+
+        <a href="dashboard.html" class="back-btn">
+            ←
+        </a>
+
+        <h1>My Profile</h1>
+
+        <div class="header-space"></div>
+
+    </header>
+
+
+    <!-- Profile Card -->
+    <section class="profile-card">
+
+        <div class="profile-photo-container">
+
+            <div class="profile-photo" id="profilePhoto">
+                👤
+            </div>
+
+            <label for="photoInput" class="camera-btn">
+                📷
+            </label>
+
+            <input
+                type="file"
+                id="photoInput"
+                accept="image/*"
+                hidden
+            >
+
+        </div>
+
+        <h2 id="displayName">Your Name</h2>
+
+        <p id="displayEmail">
+            your@email.com
+        </p>
+
+        <button class="edit-profile-btn" onclick="toggleEdit()">
+            ✏️ Edit Profile
+        </button>
+
+    </section>
+
+
+    <!-- Personal Information -->
+
+    <section class="settings-section">
+
+        <h2>Personal Information</h2>
+
+        <div class="setting-card">
+
+            <div class="setting-icon">
+                👤
+            </div>
+
+            <div class="setting-content">
+
+                <label>Profile Name</label>
+
+                <input
+                    type="text"
+                    id="nameInput"
+                    value="Your Name"
+                    disabled
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="setting-card">
+
+            <div class="setting-icon">
+                📧
+            </div>
+
+            <div class="setting-content">
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="emailInput"
+                    value="your@email.com"
+                    disabled
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Learning Preferences -->
+
+    <section class="settings-section">
+
+        <h2>Learning Preferences</h2>
+
+        <div class="setting-card">
+
+            <div class="setting-icon">
+                🌍
+            </div>
+
+            <div class="setting-content">
+
+                <label>Current Language</label>
+
+                <select id="languageInput" disabled>
+
+                    <option value="korean">
+                        🇰🇷 Korean
+                    </option>
+
+                    <option value="english">
+                        🇺🇸 English
+                    </option>
+
+                    <option value="spanish">
+                        🇪🇸 Spanish
+                    </option>
+
+                    <option value="french">
+                        🇫🇷 French
+                    </option>
+
+                    <option value="german">
+                        🇩🇪 German
+                    </option>
+
+                    <option value="japanese">
+                        🇯🇵 Japanese
+                    </option>
+
+                    <option value="chinese">
+                        🇨🇳 Chinese
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="setting-card">
+
+            <div class="setting-icon">
+                📈
+            </div>
+
+            <div class="setting-content">
+
+                <label>Learning Level</label>
+
+                <select id="levelInput" disabled>
+
+                    <option>Beginner</option>
+                    <option>Elementary</option>
+                    <option>Intermediate</option>
+                    <option>Upper Intermediate</option>
+                    <option>Advanced</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="setting-card">
+
+            <div class="setting-icon">
+                🎯
+            </div>
+
+            <div class="setting-content">
+
+                <label>Daily Learning Goal</label>
+
+                <select id="goalInput" disabled>
+
+                    <option>10 minutes</option>
+                    <option>20 minutes</option>
+                    <option>30 minutes</option>
+                    <option>45 minutes</option>
+                    <option>60 minutes</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Notifications -->
+
+    <section class="settings-section">
+
+        <h2>Notifications</h2>
+
+        <div class="setting-card notification-card">
+
+            <div class="setting-icon">
+                🔔
+            </div>
+
+            <div class="setting-content">
+
+                <label>Learning Reminders</label>
+
+                <p>
+                    Get reminders to keep your learning streak.
+                </p>
+
+            </div>
+
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    id="notificationToggle"
+                    checked
+                >
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+    </section>
+
+
+    <!-- Account Settings -->
+
+    <section class="settings-section">
+
+        <h2>Account Settings</h2>
+
+        <div class="action-card">
+
+            <button onclick="changeLanguage()">
+                🌍 Change Language
+                <span>→</span>
+            </button>
+
+            <button onclick="changePassword()">
+                🔒 Change Password
+                <span>→</span>
+            </button>
+
+            <button onclick="logout()" class="logout-btn">
+                🚪 Logout
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Save button -->
+
+    <button
+        id="saveBtn"
+        class="save-btn"
+        onclick="saveProfile()"
+        style="display: none;"
+    >
+        Save Changes
+    </button>
+
+</div>
+
+<script src="profile.js"></script>
+
+</body>
+</html>

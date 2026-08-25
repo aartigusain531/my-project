@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #fff0f6,
+        #f5e9ff,
+        #ffe4ef
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+/* Background decoration */
+
+body::before {
+    content: "";
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    background: #f8c8dc;
+
+    border-radius: 50%;
+
+    top: -100px;
+    left: -80px;
+
+    opacity: 0.45;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background: #dcc8f5;
+
+    border-radius: 50%;
+
+    bottom: -150px;
+    right: -100px;
+
+    opacity: 0.45;
+}
+
+/* Main container */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* Signup card */
+
+.signup-card {
+    width: 440px;
+
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.84);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 60px rgba(120, 70, 110, 0.15);
+
+    backdrop-filter: blur(15px);
+
+    text-align: center;
+}
+
+/* Logo */
+
+.logo {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #e85d9e,
+        #9b6de3
+    );
+
+    color: white;
+
+    border-radius: 19px;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    box-shadow:
+        0 10px 25px rgba(190, 90, 160, 0.3);
+}
+
+/* Heading */
+
+.signup-card h1 {
+    color: #38233f;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+/* Subtitle */
+
+.subtitle {
+    color: #806a83;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+/* Input fields */
+
+.input-box {
+    margin-bottom: 15px;
+}
+
+.input-box input,
+.input-box select {
+
+    width: 100%;
+    height: 52px;
+
+    padding: 0 17px;
+
+    border-radius: 14px;
+
+    border: 1.5px solid #ead6e4;
+
+    background: #fffafd;
+
+    color: #38233f;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.input-box input::placeholder {
+    color: #a996a9;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+
+    border-color: #d86aa3;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(216, 106, 163, 0.1);
+}
+
+/* Select */
+
+.input-box select {
+    appearance: none;
+
+    cursor: pointer;
+}
+
+/* Button */
+
+button {
+
+    width: 100%;
+    height: 53px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #e85d9e,
+        #a66ee8
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(194, 91, 158, 0.25);
+
+    transition: 0.3s;
+}
+
+button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(194, 91, 158, 0.35);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Login link */
+
+.login-text {
+
+    margin-top: 22px;
+
+    color: #806a83;
+
+    font-size: 14px;
+}
+
+.login-text a {
+
+    color: #c54d91;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* Home link */
+
+.home-link {
+    margin-top: 16px;
+}
+
+.home-link a {
+
+    color: #8a7190;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.home-link a:hover {
+    color: #c54d91;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .signup-card {
+
+        width: 100%;
+
+        padding: 32px 24px;
+
+        border-radius: 24px;
+    }
+
+    .signup-card h1 {
+        font-size: 26px;
+    }
+
+    .logo {
+        width: 56px;
+        height: 56px;
+    }
+}

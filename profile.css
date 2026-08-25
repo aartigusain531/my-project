@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #fff3f8,
+        #f6edff,
+        #ffeaf3
+    );
+
+    min-height: 100vh;
+
+    color: #38233f;
+}
+
+.profile-page {
+    width: 100%;
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 25px 20px 60px;
+}
+
+
+/* Header */
+
+.profile-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.profile-header h1 {
+    font-size: 30px;
+    color: #38233f;
+}
+
+.back-btn {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: white;
+
+    color: #9c4c91;
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+    box-shadow: 0 8px 20px rgba(120, 70, 110, 0.1);
+
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    transform: translateX(-3px);
+}
+
+.header-space {
+    width: 45px;
+}
+
+
+/* Profile Card */
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 28px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(120, 70, 110, 0.12);
+
+    margin-bottom: 25px;
+}
+
+
+/* Profile photo */
+
+.profile-photo-container {
+    position: relative;
+
+    width: 110px;
+    height: 110px;
+
+    margin: auto auto 15px;
+}
+
+.profile-photo {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #f4a8ca,
+        #c9a5ef
+    );
+
+    font-size: 45px;
+
+    overflow: hidden;
+
+    border: 5px solid white;
+
+    box-shadow: 0 8px 25px rgba(150, 80, 140, 0.2);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.camera-btn {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #d95f9d;
+
+    color: white;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.profile-card h2 {
+    font-size: 24px;
+
+    margin-bottom: 5px;
+}
+
+.profile-card p {
+    color: #8a718d;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+/* Edit button */
+
+.edit-profile-btn {
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 12px;
+
+    background: #f9e1ee;
+
+    color: #b34d89;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.edit-profile-btn:hover {
+    background: #f3cfe1;
+}
+
+
+/* Sections */
+
+.settings-section {
+    margin-bottom: 25px;
+}
+
+.settings-section h2 {
+    font-size: 19px;
+
+    margin-bottom: 12px;
+
+    color: #4a2b4f;
+}
+
+
+/* Setting card */
+
+.setting-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    margin-bottom: 10px;
+
+    box-shadow: 0 8px 25px rgba(120, 70, 110, 0.07);
+}
+
+.setting-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #f9e8f2;
+
+    font-size: 20px;
+}
+
+.setting-content {
+    flex: 1;
+}
+
+.setting-content label {
+    display: block;
+
+    font-size: 13px;
+
+    color: #8b718e;
+
+    margin-bottom: 6px;
+}
+
+.setting-content input,
+.setting-content select {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #38233f;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.setting-content input:disabled,
+.setting-content select:disabled {
+    opacity: 1;
+}
+
+
+/* Notification */
+
+.notification-card {
+    min-height: 80px;
+}
+
+.setting-content p {
+    color: #9a869c;
+
+    font-size: 12px;
+
+    margin: 0;
+}
+
+
+/* Toggle */
+
+.switch {
+    position: relative;
+
+    width: 48px;
+    height: 26px;
+
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+
+    cursor: pointer;
+
+    inset: 0;
+
+    background: #ddd;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    left: 3px;
+    bottom: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+    background: #d85d9c;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(22px);
+}
+
+
+/* Action cards */
+
+.action-card {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(120, 70, 110, 0.07);
+}
+
+.action-card button {
+    width: 100%;
+
+    padding: 18px;
+
+    background: white;
+
+    border: none;
+
+    border-bottom: 1px solid #f3e7f0;
+
+    color: #4b304f;
+
+    font-size: 15px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.action-card button:last-child {
+    border-bottom: none;
+}
+
+.action-card button:hover {
+    background: #fff7fb;
+}
+
+.logout-btn {
+    color: #c94f75 !important;
+}
+
+
+/* Save button */
+
+.save-btn {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background: linear-gradient(
+        135deg,
+        #e85d9e,
+        #a66ee8
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 5px;
+
+    box-shadow: 0 10px 25px rgba(194, 91, 158, 0.25);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .profile-page {
+        padding: 20px 15px 40px;
+    }
+
+    .profile-header h1 {
+        font-size: 25px;
+    }
+
+    .profile-card {
+        padding: 28px 20px;
+    }
+
+    .setting-card {
+        padding: 15px;
+    }
+
+    .setting-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
