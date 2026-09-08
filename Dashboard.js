@@ -1,1026 +1,438 @@
-/* =========================================
-   TRAGO - USER DATA
-========================================= */
+// ================= USER PROFILE =================
 
+const savedUser = localStorage.getItem("tragoUser");
 
-/*
-   These values come from the LOGIN page.
+if (!savedUser) {
 
-   Your login page must save:
-
-   tragoUserName
-   tragoLanguage
-*/
-
-
-const loggedInName =
-    localStorage.getItem("tragoUserName") || "Learner";
-
-
-const loggedInLanguage =
-    localStorage.getItem("tragoLanguage") || "Korean";
-
-
-/* =========================================
-   LANGUAGE DATA
-========================================= */
-
-const languageData = {
-
-    Korean: {
-
-        name: "Korean",
-
-        flag: "🇰🇷",
-
-        native: "한국어",
-
-        foundation:
-            "Korean Foundations",
-
-        character:
-            "Korean Alphabet",
-
-        vowels:
-            "Korean Vowels",
-
-        consonants:
-            "Korean Consonants",
-
-        syllables:
-            "Korean Syllables",
-
-        reading:
-            "Korean Reading",
-
-        writing:
-            "Korean Writing",
-
-        conversation:
-            "Basic Korean Conversation",
-
-        characterDescription:
-            "Learn Hangul and its basic building blocks."
-
-    },
-
-
-    Japanese: {
-
-        name: "Japanese",
-
-        flag: "🇯🇵",
-
-        native: "日本語",
-
-        foundation:
-            "Japanese Foundations",
-
-        character:
-            "Japanese Characters",
-
-        vowels:
-            "Japanese Vowels",
-
-        consonants:
-            "Japanese Consonants",
-
-        syllables:
-            "Japanese Syllables",
-
-        reading:
-            "Japanese Reading",
-
-        writing:
-            "Japanese Writing",
-
-        conversation:
-            "Basic Japanese Conversation",
-
-        characterDescription:
-            "Start with Japanese writing systems and characters."
-
-    },
-
-
-    Spanish: {
-
-        name: "Spanish",
-
-        flag: "🇪🇸",
-
-        native: "Español",
-
-        foundation:
-            "Spanish Foundations",
-
-        character:
-            "Spanish Alphabet",
-
-        vowels:
-            "Spanish Vowels",
-
-        consonants:
-            "Spanish Consonants",
-
-        syllables:
-            "Spanish Syllables",
-
-        reading:
-            "Spanish Reading",
-
-        writing:
-            "Spanish Writing",
-
-        conversation:
-            "Basic Spanish Conversation",
-
-        characterDescription:
-            "Learn the Spanish alphabet and its sounds."
-
-    },
-
-
-    French: {
-
-        name: "French",
-
-        flag: "🇫🇷",
-
-        native: "Français",
-
-        foundation:
-            "French Foundations",
-
-        character:
-            "French Alphabet",
-
-        vowels:
-            "French Vowels",
-
-        consonants:
-            "French Consonants",
-
-        syllables:
-            "French Syllables",
-
-        reading:
-            "French Reading",
-
-        writing:
-            "French Writing",
-
-        conversation:
-            "Basic French Conversation",
-
-        characterDescription:
-            "Learn French letters and their sounds."
-
-    },
-
-
-    German: {
-
-        name: "German",
-
-        flag: "🇩🇪",
-
-        native: "Deutsch",
-
-        foundation:
-            "German Foundations",
-
-        character:
-            "German Alphabet",
-
-        vowels:
-            "German Vowels",
-
-        consonants:
-            "German Consonants",
-
-        syllables:
-            "German Syllables",
-
-        reading:
-            "German Reading",
-
-        writing:
-            "German Writing",
-
-        conversation:
-            "Basic German Conversation",
-
-        characterDescription:
-            "Learn German letters and pronunciation."
-
-    },
-
-
-    Chinese: {
-
-        name: "Chinese",
-
-        flag: "🇨🇳",
-
-        native: "中文",
-
-        foundation:
-            "Chinese Foundations",
-
-        character:
-            "Chinese Characters",
-
-        vowels:
-            "Chinese Vowels",
-
-        consonants:
-            "Chinese Consonants",
-
-        syllables:
-            "Chinese Syllables",
-
-        reading:
-            "Chinese Reading",
-
-        writing:
-            "Chinese Writing",
-
-        conversation:
-            "Basic Chinese Conversation",
-
-        characterDescription:
-            "Start learning Chinese characters and sounds."
-
-    }
-
-};
-
-
-/* =========================================
-   CURRENT LANGUAGE
-========================================= */
-
-const selectedLanguageData =
-    languageData[loggedInLanguage]
-    || languageData.Korean;
-
-
-/* =========================================
-   CURRENT USER
-========================================= */
-
-let currentUser = {
-
-    name: loggedInName
-
-};
-
-
-let currentLanguage = {
-
-    name:
-        selectedLanguageData.name,
-
-    flag:
-        selectedLanguageData.flag,
-
-    level:
-        localStorage.getItem("tragoLevel") || "A1",
-
-    levelName:
-        localStorage.getItem("tragoLevelName")
-        || "Beginner"
-
-};
-
-
-/* =========================================
-   LEVEL NAMES
-========================================= */
-
-const levelNames = {
-
-    A1: "Beginner",
-
-    A2: "Elementary",
-
-    B1: "Intermediate",
-
-    B2: "Upper Intermediate",
-
-    C1: "Advanced",
-
-    C2: "Proficient"
-
-};
-
-
-/* =========================================
-   INITIALIZE DASHBOARD
-========================================= */
-
-function initialize() {
-
-    const name =
-        currentUser.name;
-
-
-    const firstLetter =
-        name.charAt(0).toUpperCase();
-
-
-    /* USER NAME */
-
-    document.getElementById(
-        "welcomeName"
-    ).textContent = name;
-
-
-    document.getElementById(
-        "headerUserName"
-    ).textContent = name;
-
-
-    document.getElementById(
-        "sidebarUserName"
-    ).textContent = name;
-
-
-    document.getElementById(
-        "headerAvatar"
-    ).textContent = firstLetter;
-
-
-    document.getElementById(
-        "sidebarAvatar"
-    ).textContent = firstLetter;
-
-
-    /* LANGUAGE */
-
-    updateLanguageUI();
-
-
-    /* LEARNING PATH */
-
-    updateLearningPath();
-
-
-    /* RENDER LANGUAGES */
-
-    renderLanguages();
+    // User is not logged in
+    window.location.href = "login.html";
+    return;
 
 }
 
+const user = JSON.parse(savedUser);
 
-/* =========================================
-   UPDATE LANGUAGE UI
-========================================= */
+const userName = user.name || "Learner";
+const userEmail = user.email || "";
 
-function updateLanguageUI() {
+// Get first letter for avatar
+const avatarLetter = userName.charAt(0).toUpperCase();
 
-    const language =
-        selectedLanguageData;
+// Sidebar profile
+const sidebarUserName = document.getElementById("sidebarUserName");
+const sidebarAvatar = document.getElementById("sidebarAvatar");
 
+if (sidebarUserName) {
+    sidebarUserName.textContent = userName;
+}
 
-    /* SIDEBAR */
-
-    document.getElementById(
-        "sidebarFlag"
-    ).textContent =
-        language.flag;
-
-
-    document.getElementById(
-        "sidebarLanguage"
-    ).textContent =
-        language.name;
-
-
-    document.getElementById(
-        "sidebarLevel"
-    ).textContent =
-        `${currentLanguage.level}
-         ${currentLanguage.levelName}`;
-
-
-    /* HEADER */
-
-    document.getElementById(
-        "headerFlag"
-    ).textContent =
-        language.flag;
-
-
-    document.getElementById(
-        "headerLanguage"
-    ).textContent =
-        language.name;
-
-
-    document.getElementById(
-        "headerLevel"
-    ).textContent =
-        `${currentLanguage.level}
-         ${currentLanguage.levelName}`;
-
-
-    /* LEARNING LABEL */
-
-    document.getElementById(
-        "learningLabel"
-    ).textContent =
-        `${language.flag}
-         ${language.name.toUpperCase()}
-         LEARNING`;
-
-
-    /* SIDEBAR LEARNING ITEMS */
-
-    document.getElementById(
-        "vowelsMenu"
-    ).textContent =
-        language.vowels;
-
-
-    document.getElementById(
-        "consonantsMenu"
-    ).textContent =
-        language.consonants;
-
-
-    /* PAGE TITLES */
-
-    document.getElementById(
-        "vowelsTitle"
-    ).textContent =
-        language.vowels;
-
-
-    document.getElementById(
-        "consonantsTitle"
-    ).textContent =
-        language.consonants;
-
+if (sidebarAvatar) {
+    sidebarAvatar.textContent = avatarLetter;
 }
 
 
-/* =========================================
-   UPDATE LEARNING PATH
-========================================= */
+// Header profile
+const headerUserName = document.getElementById("headerUserName");
+const headerAvatar = document.getElementById("headerAvatar");
 
-function updateLearningPath() {
+if (headerUserName) {
+    headerUserName.textContent = userName;
+}
 
-    const language =
-        selectedLanguageData;
-
-
-    document.getElementById(
-        "foundationTitle"
-    ).textContent =
-        language.foundation;
-
-
-    document.getElementById(
-        "foundationDescription"
-    ).textContent =
-        `Build your ${language.name}
-         skills step by step.`;
-
-
-    document.getElementById(
-        "pathCharacter"
-    ).textContent =
-        language.character;
-
-
-    document.getElementById(
-        "characterDescription"
-    ).textContent =
-        language.characterDescription;
-
-
-    document.getElementById(
-        "pathVowels"
-    ).textContent =
-        language.vowels;
-
-
-    document.getElementById(
-        "pathConsonants"
-    ).textContent =
-        language.consonants;
-
-
-    document.getElementById(
-        "pathSyllables"
-    ).textContent =
-        language.syllables;
-
-
-    document.getElementById(
-        "pathReading"
-    ).textContent =
-        language.reading;
-
-
-    document.getElementById(
-        "pathWriting"
-    ).textContent =
-        language.writing;
-
-
-    document.getElementById(
-        "pathConversation"
-    ).textContent =
-        language.conversation;
-
+if (headerAvatar) {
+    headerAvatar.textContent = avatarLetter;
 }
 
 
-/* =========================================
-   PAGE NAVIGATION
-========================================= */
+// Welcome message
+const welcomeName = document.getElementById("welcomeName");
 
-function showPage(page) {
-
-    document
-        .querySelectorAll(".page")
-        .forEach(item => {
-
-            item.classList.remove(
-                "active-page"
-            );
-
-        });
-
-
-    const target =
-        document.getElementById(
-            page + "Page"
-        );
-
-
-    if (target) {
-
-        target.classList.add(
-            "active-page"
-        );
-
-    }
-
-
-    document
-        .querySelectorAll(".nav-item")
-        .forEach(item => {
-
-            item.classList.remove(
-                "active"
-            );
-
-
-            if (
-                item.dataset.page === page
-            ) {
-
-                item.classList.add(
-                    "active"
-                );
-
-            }
-
-        });
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
+if (welcomeName) {
+    welcomeName.textContent = userName;
 }
 
 
-/* =========================================
-   SIDEBAR NAVIGATION
-========================================= */
+// ================= PAGE NAVIGATION =================
 
-document
-    .querySelectorAll(".nav-item")
-    .forEach(item => {
+const navItems = document.querySelectorAll(".nav-item");
 
-        item.addEventListener(
-            "click",
-            function () {
+navItems.forEach(function (item) {
 
-                const page =
-                    this.dataset.page;
+    item.addEventListener("click", function () {
 
+        const page = item.dataset.page;
 
-                if (page) {
+        if (!page) {
+            return;
+        }
 
-                    showPage(page);
-
-                }
-
-            }
-        );
+        showPage(page);
 
     });
 
-
-/* =========================================
-   OPEN LESSON
-========================================= */
-
-function openLesson(page) {
-
-    showPage(page);
-
-}
+});
 
 
-/* =========================================
-   LANGUAGE LIST
-========================================= */
+// ================= LANGUAGE SELECTION =================
 
-let languages = [
+const languageOptions =
+    document.querySelectorAll(".language-option");
 
-    {
+const languageContinue =
+    document.getElementById("languageContinue");
 
-        name:
-            selectedLanguageData.name,
+const levelOptions =
+    document.querySelectorAll(".level-option");
 
-        flag:
-            selectedLanguageData.flag,
-
-        level:
-            currentLanguage.level,
-
-        levelName:
-            currentLanguage.levelName
-
-    }
-
-];
-
+const levelContinue =
+    document.getElementById("levelContinue");
 
 let selectedLanguage = null;
-
+let selectedFlag = null;
 let selectedLevel = null;
 
 
-/* =========================================
-   SHOW LANGUAGE CHOOSER
-========================================= */
+languageOptions.forEach(function (option) {
 
-function showLanguageChooser() {
+    option.addEventListener("click", function () {
 
-    selectedLanguage = null;
-
-
-    document
-        .querySelectorAll(".language-option")
-        .forEach(option => {
-
-            option.classList.remove(
-                "selected"
-            );
-
+        languageOptions.forEach(function (item) {
+            item.classList.remove("selected");
         });
 
+        option.classList.add("selected");
 
-    document.getElementById(
-        "languageContinue"
-    ).disabled = true;
+        selectedLanguage =
+            option.dataset.language;
 
+        selectedFlag =
+            option.dataset.flag;
 
-    showPage(
-        "chooseLanguage"
-    );
-
-}
-
-
-/* =========================================
-   LANGUAGE SELECTION
-========================================= */
-
-document
-    .querySelectorAll(".language-option")
-    .forEach(option => {
-
-        option.addEventListener(
-            "click",
-            function () {
-
-                document
-                    .querySelectorAll(
-                        ".language-option"
-                    )
-                    .forEach(item => {
-
-                        item.classList.remove(
-                            "selected"
-                        );
-
-                    });
-
-
-                this.classList.add(
-                    "selected"
-                );
-
-
-                selectedLanguage = {
-
-                    name:
-                        this.dataset.language,
-
-                    flag:
-                        this.dataset.flag
-
-                };
-
-
-                document.getElementById(
-                    "languageContinue"
-                ).disabled = false;
-
-            }
-        );
+        if (languageContinue) {
+            languageContinue.disabled = false;
+        }
 
     });
 
+});
 
-/* =========================================
-   LANGUAGE CONTINUE
-========================================= */
 
-document.getElementById(
-    "languageContinue"
-).addEventListener(
-    "click",
-    function () {
+if (languageContinue) {
+
+    languageContinue.addEventListener("click", function () {
 
         if (!selectedLanguage) {
-
             return;
-
         }
 
+        document.getElementById("selectedLanguage")
+            .textContent = selectedLanguage;
 
-        document.getElementById(
-            "selectedFlag"
-        ).textContent =
-            selectedLanguage.flag;
-
-
-        document.getElementById(
-            "selectedLanguage"
-        ).textContent =
-            selectedLanguage.name;
-
-
-        selectedLevel = null;
-
-
-        document
-            .querySelectorAll(
-                ".level-option"
-            )
-            .forEach(option => {
-
-                option.classList.remove(
-                    "selected"
-                );
-
-            });
-
-
-        document.getElementById(
-            "levelContinue"
-        ).disabled = true;
-
+        document.getElementById("selectedFlag")
+            .textContent = selectedFlag;
 
         showPage("level");
 
-    }
-);
+    });
+
+}
 
 
-/* =========================================
-   LEVEL SELECTION
-========================================= */
+// ================= LEVEL SELECTION =================
 
-document
-    .querySelectorAll(".level-option")
-    .forEach(option => {
+levelOptions.forEach(function (option) {
 
-        option.addEventListener(
-            "click",
-            function () {
+    option.addEventListener("click", function () {
 
-                document
-                    .querySelectorAll(
-                        ".level-option"
-                    )
-                    .forEach(item => {
+        levelOptions.forEach(function (item) {
+            item.classList.remove("selected");
+        });
 
-                        item.classList.remove(
-                            "selected"
-                        );
+        option.classList.add("selected");
 
-                    });
+        selectedLevel =
+            option.dataset.level;
 
-
-                this.classList.add(
-                    "selected"
-                );
-
-
-                selectedLevel =
-                    this.dataset.level;
-
-
-                document.getElementById(
-                    "levelContinue"
-                ).disabled = false;
-
-            }
-        );
+        if (levelContinue) {
+            levelContinue.disabled = false;
+        }
 
     });
 
+});
 
-/* =========================================
-   START NEW LANGUAGE
-========================================= */
 
-document.getElementById(
-    "levelContinue"
-).addEventListener(
-    "click",
-    function () {
+if (levelContinue) {
 
-        if (
-            !selectedLanguage ||
-            !selectedLevel
-        ) {
+    levelContinue.addEventListener("click", function () {
 
+        if (!selectedLanguage || !selectedLevel) {
             return;
-
         }
 
-
-        const newLanguage = {
-
-            name:
-                selectedLanguage.name,
-
-            flag:
-                selectedLanguage.flag,
-
-            level:
-                selectedLevel,
-
-            levelName:
-                levelNames[selectedLevel]
-
+        // Save language information
+        const languageData = {
+            language: selectedLanguage,
+            flag: selectedFlag,
+            level: selectedLevel
         };
-
 
         localStorage.setItem(
             "tragoLanguage",
-            newLanguage.name
+            JSON.stringify(languageData)
         );
 
+        updateLanguageUI();
 
-        localStorage.setItem(
-            "tragoLevel",
-            newLanguage.level
-        );
-
-
-        localStorage.setItem(
-            "tragoLevelName",
-            newLanguage.levelName
-        );
-
-
-        /*
-           Reload dashboard so all
-           language content changes.
-        */
-
-        window.location.reload();
-
-    }
-);
-
-
-/* =========================================
-   RENDER LANGUAGES
-========================================= */
-
-function renderLanguages() {
-
-    const container =
-        document.getElementById(
-            "myLanguages"
-        );
-
-
-    if (!container) {
-
-        return;
-
-    }
-
-
-    container.innerHTML = "";
-
-
-    languages.forEach(language => {
-
-        const card =
-            document.createElement("div");
-
-
-        card.className =
-            "my-language-card";
-
-
-        if (
-            language.name ===
-            currentLanguage.name
-        ) {
-
-            card.classList.add(
-                "active"
-            );
-
-        }
-
-
-        card.innerHTML = `
-
-            <span class="flag">
-                ${language.flag}
-            </span>
-
-            <div>
-
-                <strong>
-                    ${language.name}
-                </strong>
-
-                <small>
-                    ${language.level}
-                    ${language.levelName}
-                </small>
-
-            </div>
-
-            ${
-                language.name ===
-                currentLanguage.name
-                ?
-                `<span class="current-label">
-                    CURRENT
-                </span>`
-                :
-                ""
-            }
-
-        `;
-
-
-        container.appendChild(card);
+        showPage("home");
 
     });
 
 }
 
 
-/* =========================================
-   CHANGE LANGUAGE
-========================================= */
+// ================= CHANGE LANGUAGE =================
 
-document.getElementById(
-    "changeLanguage"
-).addEventListener(
-    "click",
-    function () {
+const changeLanguage =
+    document.getElementById("changeLanguage");
 
-        showPage("languages");
+if (changeLanguage) {
 
+    changeLanguage.addEventListener("click", function () {
+        showLanguageChooser();
+    });
+
+}
+
+
+// ================= LOAD SAVED LANGUAGE =================
+
+updateLanguageUI();
+
+
+// ================= SHOW PAGE =================
+
+window.showPage = function (pageName) {
+
+    const pages =
+        document.querySelectorAll(".page");
+
+    pages.forEach(function (page) {
+        page.classList.remove("active-page");
+    });
+
+
+    const selectedPage =
+        document.getElementById(pageName + "Page");
+
+    if (selectedPage) {
+        selectedPage.classList.add("active-page");
     }
-);
 
 
-/* =========================================
-   START APP
-========================================= */
+    // Update sidebar active state
+    navItems.forEach(function (item) {
 
-initialize();
+        item.classList.remove("active");
+
+        if (item.dataset.page === pageName) {
+            item.classList.add("active");
+        }
+
+    });
+
+};
+
+
+// ================= LANGUAGE CHOOSER =================
+
+window.showLanguageChooser = function () {
+    showPage("chooseLanguage");
+};
+
+
+// ================= LESSON =================
+
+window.openLesson = function (lesson) {
+
+    const page =
+        document.getElementById(lesson + "Page");
+
+    if (page) {
+        showPage(lesson);
+    }
+
+};
+
+
+// ================= UPDATE LANGUAGE UI =================
+
+function updateLanguageUI() {
+
+    const savedLanguage =
+        localStorage.getItem("tragoLanguage");
+
+    if (!savedLanguage) {
+        return;
+    }
+
+    const language =
+        JSON.parse(savedLanguage);
+
+
+    // Sidebar
+    const sidebarFlag =
+        document.getElementById("sidebarFlag");
+
+    const sidebarLanguage =
+        document.getElementById("sidebarLanguage");
+
+    const sidebarLevel =
+        document.getElementById("sidebarLevel");
+
+
+    if (sidebarFlag) {
+        sidebarFlag.textContent = language.flag;
+    }
+
+    if (sidebarLanguage) {
+        sidebarLanguage.textContent =
+            language.language;
+    }
+
+    if (sidebarLevel) {
+        sidebarLevel.textContent =
+            language.level + " Beginner";
+    }
+
+
+    // Header
+    const headerFlag =
+        document.getElementById("headerFlag");
+
+    const headerLanguage =
+        document.getElementById("headerLanguage");
+
+    const headerLevel =
+        document.getElementById("headerLevel");
+
+
+    if (headerFlag) {
+        headerFlag.textContent =
+            language.flag;
+    }
+
+    if (headerLanguage) {
+        headerLanguage.textContent =
+            language.language;
+    }
+
+    if (headerLevel) {
+        headerLevel.textContent =
+            language.level + " Beginner";
+    }
+
+
+    // Learning label
+    const learningLabel =
+        document.getElementById("learningLabel");
+
+    if (learningLabel) {
+        learningLabel.textContent =
+            language.flag + " " +
+            language.language.toUpperCase() +
+            " LEARNING";
+    }
+
+
+    // Foundation title
+    const foundationTitle =
+        document.getElementById("foundationTitle");
+
+    if (foundationTitle) {
+        foundationTitle.textContent =
+            language.language +
+            " Foundations";
+    }
+
+
+    // Path items
+    const pathCharacter =
+        document.getElementById("pathCharacter");
+
+    const pathVowels =
+        document.getElementById("pathVowels");
+
+    const pathConsonants =
+        document.getElementById("pathConsonants");
+
+    const pathSyllables =
+        document.getElementById("pathSyllables");
+
+    const pathReading =
+        document.getElementById("pathReading");
+
+    const pathWriting =
+        document.getElementById("pathWriting");
+
+    const pathConversation =
+        document.getElementById("pathConversation");
+
+
+    if (pathCharacter) {
+        pathCharacter.textContent =
+            language.language + " Alphabet";
+    }
+
+    if (pathVowels) {
+        pathVowels.textContent =
+            language.language + " Vowels";
+    }
+
+    if (pathConsonants) {
+        pathConsonants.textContent =
+            language.language + " Consonants";
+    }
+
+    if (pathSyllables) {
+        pathSyllables.textContent =
+            language.language + " Syllables";
+    }
+
+    if (pathReading) {
+        pathReading.textContent =
+            language.language + " Reading";
+    }
+
+    if (pathWriting) {
+        pathWriting.textContent =
+            language.language + " Writing";
+    }
+
+    if (pathConversation) {
+        pathConversation.textContent =
+            "Basic " +
+            language.language +
+            " Conversation";
+    }
+
+
+    // Sidebar menu
+    const vowelsMenu =
+        document.getElementById("vowelsMenu");
+
+    const consonantsMenu =
+        document.getElementById("consonantsMenu");
+
+
+    if (vowelsMenu) {
+        vowelsMenu.textContent =
+            language.language + " Vowels";
+    }
+
+    if (consonantsMenu) {
+        consonantsMenu.textContent =
+            language.language + " Consonants";
+    }
+
+}
