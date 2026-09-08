@@ -5,18 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<<<<<<< HEAD
 
 <title>TRAGO - Login</title>
 
 <link rel="stylesheet" href="login.css">
 
 
+=======
+```
+<title>TRAGO - Login</title>
+
+<link rel="stylesheet" href="login.css">
+```
+
+>>>>>>> 5452024 (changes in login)
 </head>
 
 <body>
 
 <div class="container">
 
+<<<<<<< HEAD
 
 <div class="login-card">
 
@@ -24,6 +34,15 @@
 
     <h1>Welcome Back!</h1>
 
+=======
+```
+<div class="login-card">
+
+    <div class="logo">L</div>
+
+    <h1>Welcome Back!</h1>
+
+>>>>>>> 5452024 (changes in login)
     <p class="subtitle">
         Continue your language learning journey
     </p>
@@ -66,6 +85,7 @@
         </p>
 
     </form>
+<<<<<<< HEAD
 
 </div>
 
@@ -110,3 +130,49 @@
         window.location.href = "Dashboard.html";
     });
     </script>
+=======
+
+</div>
+```
+
+</div>
+
+<!-- ================= LOGIN JAVASCRIPT ================= -->
+
+<script>
+
+    // Get the login form
+    const loginForm = document.getElementById("loginForm");
+
+    // When Login button is clicked
+    loginForm.addEventListener("submit", function(event) {
+
+        // Stop the page from refreshing
+        event.preventDefault();
+
+        // Get email and password
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        // Check that both fields contain something
+        if (email && password) {
+
+            // Save email temporarily
+            localStorage.setItem("userEmail", email);
+
+            // Open Dashboard
+            window.location.href = "Dashboard.html";
+
+        } else {
+
+            alert("Please enter your email and password.");
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
+>>>>>>> 5452024 (changes in login)
