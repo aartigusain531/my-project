@@ -1,763 +1,659 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Trago - Language Learning</title>
+```
+<title>Trago - Language Learning</title>
 
-    <link rel="stylesheet" href="DashBoard.css">
+<link rel="stylesheet" href="DashBoard.css">
+```
+
 </head>
 
 <body>
 
 <div class="app">
 
-    <!-- ================= SIDEBAR ================= -->
+```
+<!-- ================= SIDEBAR ================= -->
 
-    <aside class="sidebar">
+<aside class="sidebar">
 
-        <div class="brand">
-            <div class="brand-logo">T</div>
-            <span>Trago</span>
+    <div class="brand">
+        <div class="brand-logo">T</div>
+        <span>Trago</span>
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <button class="nav-item active" data-page="home">
+            <span class="nav-icon">⌂</span>
+            <span>Home</span>
+        </button>
+
+        <button class="nav-item" data-page="languages">
+            <span class="nav-icon">◎</span>
+            <span>Languages</span>
+        </button>
+
+        <div class="current-language">
+
+            <span id="sidebarFlag">🇰🇷</span>
+
+            <div>
+                <strong id="sidebarLanguage">
+                    Korean
+                </strong>
+
+                <small id="sidebarLevel">
+                    A1 Beginner
+                </small>
+            </div>
+
         </div>
 
-        <nav class="sidebar-nav">
 
-            <button class="nav-item active" data-page="home">
-                <span class="nav-icon">⌂</span>
-                <span>Home</span>
-            </button>
+        <!-- LEARN -->
 
-            <button class="nav-item" data-page="languages">
-                <span class="nav-icon">◎</span>
-                <span>Languages</span>
-            </button>
+        <div class="menu-title">
+            LEARN
+        </div>
 
-            <div class="current-language">
+        <button class="nav-item" data-page="about">
+            <span class="nav-icon">ⓘ</span>
+            <span>About</span>
+        </button>
 
-                <span id="sidebarFlag">🇰🇷</span>
+        <button class="nav-item" data-page="vowels">
+            <span class="nav-icon">◉</span>
+            <span id="vowelsMenu">Vowels</span>
+        </button>
 
-                <div>
-                    <strong id="sidebarLanguage">
-                        Korean
-                    </strong>
+        <button class="nav-item" data-page="consonants">
+            <span class="nav-icon">◇</span>
+            <span id="consonantsMenu">Consonants</span>
+        </button>
 
-                    <small id="sidebarLevel">
-                        A1 Beginner
-                    </small>
-                </div>
+        <button class="nav-item" data-page="pronunciation">
+            <span class="nav-icon">🔊</span>
+            <span>Pronunciation</span>
+        </button>
+
+        <button class="nav-item" data-page="syllables">
+            <span class="nav-icon">▦</span>
+            <span>Syllables</span>
+        </button>
+
+        <button class="nav-item" data-page="reading">
+            <span class="nav-icon">📖</span>
+            <span>Reading</span>
+        </button>
+
+        <button class="nav-item" data-page="writing">
+            <span class="nav-icon">✍</span>
+            <span>Writing</span>
+        </button>
+
+
+        <!-- PRACTICE -->
+
+        <div class="menu-title">
+            PRACTICE
+        </div>
+
+        <button class="nav-item" data-page="vocabulary">
+            <span class="nav-icon">🧠</span>
+            <span>Vocabulary</span>
+        </button>
+
+        <button class="nav-item" data-page="grammar">
+            <span class="nav-icon">📝</span>
+            <span>Grammar</span>
+        </button>
+
+        <button class="nav-item" data-page="listening">
+            <span class="nav-icon">🎧</span>
+            <span>Listening</span>
+        </button>
+
+        <button class="nav-item" data-page="speaking">
+            <span class="nav-icon">🎤</span>
+            <span>Speaking</span>
+        </button>
+
+        <button class="nav-item" data-page="conversation">
+            <span class="nav-icon">💬</span>
+            <span>Conversation</span>
+        </button>
+
+
+        <!-- JOURNEY -->
+
+        <div class="menu-title">
+            YOUR JOURNEY
+        </div>
+
+        <button class="nav-item" data-page="progress">
+            <span class="nav-icon">↗</span>
+            <span>Progress</span>
+        </button>
+
+        <button class="nav-item" data-page="achievements">
+            <span class="nav-icon">🏆</span>
+            <span>Achievements</span>
+        </button>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button class="nav-item" data-page="settings">
+            <span class="nav-icon">⚙</span>
+            <span>Settings</span>
+        </button>
+
+        <!-- SIDEBAR PROFILE -->
+        <a href="profile.html" class="user-profile">
+
+            <div class="avatar" id="sidebarAvatar">
+                A
+            </div>
+
+            <div class="user-information">
+
+                <strong id="sidebarUserName">
+                    Alex
+                </strong>
+
+                <small>
+                    Language learner
+                </small>
 
             </div>
 
+            <button class="dots" type="button">
+                •••
+            </button>
 
-            <!-- LEARN -->
+        </a>
 
-            <div class="menu-title">
-                LEARN
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+    <header class="topbar">
+
+        <div class="mobile-logo">
+
+            <div class="brand-logo">
+                T
             </div>
 
-            <button class="nav-item" data-page="about">
-                <span class="nav-icon">ⓘ</span>
-                <span>About</span>
-            </button>
+            <strong>
+                Trago
+            </strong>
 
-            <button class="nav-item" data-page="vowels">
-                <span class="nav-icon">◉</span>
-                <span id="vowelsMenu">Vowels</span>
-            </button>
+        </div>
 
-            <button class="nav-item" data-page="consonants">
-                <span class="nav-icon">◇</span>
-                <span id="consonantsMenu">Consonants</span>
-            </button>
 
-            <button class="nav-item" data-page="pronunciation">
-                <span class="nav-icon">🔊</span>
-                <span>Pronunciation</span>
-            </button>
+        <div class="search">
 
-            <button class="nav-item" data-page="syllables">
-                <span class="nav-icon">▦</span>
-                <span>Syllables</span>
-            </button>
+            <span>⌕</span>
 
-            <button class="nav-item" data-page="reading">
-                <span class="nav-icon">📖</span>
-                <span>Reading</span>
-            </button>
+            <input
+                type="text"
+                placeholder="Search lessons..."
+            >
 
-            <button class="nav-item" data-page="writing">
-                <span class="nav-icon">✍</span>
-                <span>Writing</span>
+        </div>
+
+
+        <div class="header-right">
+
+            <button class="notification">
+                ♢
+                <i></i>
             </button>
 
 
-            <!-- PRACTICE -->
+            <!-- ================= PROFILE LINK ================= -->
 
-            <div class="menu-title">
-                PRACTICE
-            </div>
+            <a href="profile.html" class="header-user">
 
-            <button class="nav-item" data-page="vocabulary">
-                <span class="nav-icon">🧠</span>
-                <span>Vocabulary</span>
-            </button>
-
-            <button class="nav-item" data-page="grammar">
-                <span class="nav-icon">📝</span>
-                <span>Grammar</span>
-            </button>
-
-            <button class="nav-item" data-page="listening">
-                <span class="nav-icon">🎧</span>
-                <span>Listening</span>
-            </button>
-
-            <button class="nav-item" data-page="speaking">
-                <span class="nav-icon">🎤</span>
-                <span>Speaking</span>
-            </button>
-
-            <button class="nav-item" data-page="conversation">
-                <span class="nav-icon">💬</span>
-                <span>Conversation</span>
-            </button>
-
-
-            <!-- JOURNEY -->
-
-            <div class="menu-title">
-                YOUR JOURNEY
-            </div>
-
-            <button class="nav-item" data-page="progress">
-                <span class="nav-icon">↗</span>
-                <span>Progress</span>
-            </button>
-
-            <button class="nav-item" data-page="achievements">
-                <span class="nav-icon">🏆</span>
-                <span>Achievements</span>
-            </button>
-
-        </nav>
-
-
-        <div class="sidebar-bottom">
-
-            <button class="nav-item" data-page="settings">
-                <span class="nav-icon">⚙</span>
-                <span>Settings</span>
-            </button>
-
-            <div class="user-profile">
-
-                <div class="avatar" id="sidebarAvatar">
+                <div class="avatar" id="headerAvatar">
                     A
                 </div>
 
-                <div class="user-information">
+                <div>
 
-                    <strong id="sidebarUserName">
+                    <strong id="headerUserName">
                         Alex
                     </strong>
 
                     <small>
-                        Language learner
+                        Learner
                     </small>
 
                 </div>
 
-                <button class="dots">
-                    •••
-                </button>
-
-            </div>
+            </a>
 
         </div>
 
-    </aside>
+    </header>
 
 
-    <!-- ================= MAIN ================= -->
+    <div class="content">
 
-    <main class="main">
 
-        <header class="topbar">
+        <!-- ================= HOME ================= -->
 
-            <div class="mobile-logo">
+        <section
+            class="page active-page"
+            id="homePage"
+        >
 
-                <div class="brand-logo">
-                    T
-                </div>
+            <div class="welcome">
 
-                <strong>
-                    Trago
-                </strong>
+                <div>
 
-            </div>
-
-
-            <div class="search">
-
-                <span>⌕</span>
-
-                <input
-                    type="text"
-                    placeholder="Search lessons..."
-                >
-
-            </div>
-
-
-            <div class="header-right">
-
-                <button class="notification">
-                    ♢
-                    <i></i>
-                </button>
-
-
-                <div class="header-user">
-
-                    <div class="avatar" id="headerAvatar">
-                        A
-                    </div>
-
-                    <div>
-
-                        <strong id="headerUserName">
-                            Alex
-                        </strong>
-
-                        <small>
-                            Learner
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </header>
-
-
-        <div class="content">
-
-
-            <!-- ================= HOME ================= -->
-
-            <section
-                class="page active-page"
-                id="homePage"
-            >
-
-                <div class="welcome">
-
-                    <div>
-
-                        <span
-                            class="pink-label"
-                            id="learningLabel"
-                        >
-                            🇰🇷 KOREAN LEARNING
-                        </span>
-
-                        <h1>
-                            Hello,
-                            <span id="welcomeName">
-                                Alex
-                            </span>! 👋
-                        </h1>
-
-                        <p>
-                            Continue your journey and learn something new today.
-                        </p>
-
-                    </div>
-
-
-                    <div class="language-selector">
-
-                        <span id="headerFlag">
-                            🇰🇷
-                        </span>
-
-                        <div>
-
-                            <strong id="headerLanguage">
-                                Korean
-                            </strong>
-
-                            <small id="headerLevel">
-                                A1 Beginner
-                            </small>
-
-                        </div>
-
-                        <button id="changeLanguage">
-                            Change
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- LEARNING PATH -->
-
-                <div class="card learning-path">
-
-                    <div class="card-header">
-
-                        <div>
-
-                            <span class="pink-label">
-                                YOUR LEARNING PATH
-                            </span>
-
-                            <h2 id="foundationTitle">
-                                Korean Foundations
-                            </h2>
-
-                            <p id="foundationDescription">
-                                Build your language skills step by step.
-                            </p>
-
-                        </div>
-
-                        <span class="path-progress">
-                            2 / 7
-                        </span>
-
-                    </div>
-
-
-                    <div class="path-list">
-
-
-                        <div class="path-item completed">
-
-                            <div class="path-number">
-                                ✓
-                            </div>
-
-                            <div class="path-info">
-
-                                <strong id="pathCharacter">
-                                    Korean Alphabet
-                                </strong>
-
-                                <span id="characterDescription">
-                                    Learn the basic building blocks
-                                </span>
-
-                            </div>
-
-                            <span class="completed-text">
-                                Completed
-                            </span>
-
-                        </div>
-
-
-                        <div class="path-item completed">
-
-                            <div class="path-number">
-                                ✓
-                            </div>
-
-                            <div class="path-info">
-
-                                <strong id="pathVowels">
-                                    Korean Vowels
-                                </strong>
-
-                                <span>
-                                    Learn basic and compound vowels
-                                </span>
-
-                            </div>
-
-                            <span class="completed-text">
-                                Completed
-                            </span>
-
-                        </div>
-
-
-                        <div class="path-item current">
-
-                            <div class="path-number">
-                                03
-                            </div>
-
-                            <div class="path-info">
-
-                                <strong id="pathConsonants">
-                                    Korean Consonants
-                                </strong>
-
-                                <span>
-                                    Learn basic consonants
-                                </span>
-
-                                <div class="small-progress">
-                                    <div style="width:62%"></div>
-                                </div>
-
-                            </div>
-
-                            <button
-                                class="continue-btn"
-                                onclick="openLesson('consonants')"
-                            >
-                                Continue
-                            </button>
-
-                        </div>
-
-
-                        <div class="path-item locked">
-
-                            <div class="path-number">
-                                04
-                            </div>
-
-                            <div class="path-info">
-
-                                <strong id="pathSyllables">
-                                    Korean Syllables
-                                </strong>
-
-                                <span>
-                                    Build syllables step by step
-                                </span>
-
-                            </div>
-
-                            <span class="lock">
-                                🔒
-                            </span>
-
-                        </div>
-
-
-                        <div class="path-item locked">
-
-                            <div class="path-number">
-                                05
-                            </div>
-
-                            <div class="path-info">
-
-                                <strong id="pathReading">
-                                    Korean Reading
-                                </strong>
-
-                                <span>
-                                    Start reading words
-                                </span>
-
-                            </div>
-
-                            <span class="lock">
-                                🔒
-                            </span>
-
-                        </div>
-
-
-                        <div class="path-item locked">
-
-                            <div class="path-number">
-                                06
-                            </div>
-
-                            <div class="path-info">
-
-                                <strong id="pathWriting">
-                                    Korean Writing
-                                </strong>
-
-                                <span>
-                                    Learn to write
-                                </span>
-
-                            </div>
-
-                            <span class="lock">
-                                🔒
-                            </span>
-
-                        </div>
-
-
-                        <div class="path-item locked">
-
-                            <div class="path-number">
-                                07
-                            </div>
-
-                            <div class="path-info">
-
-                                <strong id="pathConversation">
-                                    Basic Korean Conversation
-                                </strong>
-
-                                <span>
-                                    Use what you've learned
-                                </span>
-
-                            </div>
-
-                            <span class="lock">
-                                🔒
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PRACTICE -->
-
-                <div class="section-heading">
-
-                    <div>
-
-                        <h2>
-                            Today's practice
-                        </h2>
-
-                        <p>
-                            Practice different parts of your language skills.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="practice-grid">
-
-                    <div
-                        class="practice-card"
-                        onclick="openLesson('pronunciation')"
+                    <span
+                        class="pink-label"
+                        id="learningLabel"
                     >
-
-                        <div class="practice-icon pink">
-                            🔊
-                        </div>
-
-                        <strong>
-                            Hear it
-                        </strong>
-
-                        <span>
-                            Practice sounds
-                        </span>
-
-                        <b>
-                            5 min →
-                        </b>
-
-                    </div>
-
-
-                    <div
-                        class="practice-card"
-                        onclick="openLesson('writing')"
-                    >
-
-                        <div class="practice-icon purple">
-                            ✍
-                        </div>
-
-                        <strong>
-                            Write it
-                        </strong>
-
-                        <span>
-                            Practice writing
-                        </span>
-
-                        <b>
-                            10 min →
-                        </b>
-
-                    </div>
-
-
-                    <div
-                        class="practice-card"
-                        onclick="openLesson('speaking')"
-                    >
-
-                        <div class="practice-icon blue">
-                            🎤
-                        </div>
-
-                        <strong>
-                            Say it
-                        </strong>
-
-                        <span>
-                            Practice speaking
-                        </span>
-
-                        <b>
-                            8 min →
-                        </b>
-
-                    </div>
-
-
-                    <div
-                        class="practice-card"
-                        onclick="openLesson('reading')"
-                    >
-
-                        <div class="practice-icon green">
-                            📖
-                        </div>
-
-                        <strong>
-                            Read it
-                        </strong>
-
-                        <span>
-                            Practice reading
-                        </span>
-
-                        <b>
-                            10 min →
-                        </b>
-
-                    </div>
-
-                </div>
-
-
-                <!-- STATS -->
-
-                <div class="dashboard-grid">
-
-                    <div class="card">
-
-                        <div class="card-header">
-
-                            <div>
-
-                                <h2>
-                                    Your activity
-                                </h2>
-
-                                <p>
-                                    Learning time this week
-                                </p>
-
-                            </div>
-
-                            <strong class="pink-number">
-                                4h 25m
-                            </strong>
-
-                        </div>
-
-
-                        <div class="chart">
-
-                            <div class="bar" style="height:45%">
-                                <span>Mon</span>
-                            </div>
-
-                            <div class="bar" style="height:65%">
-                                <span>Tue</span>
-                            </div>
-
-                            <div class="bar" style="height:35%">
-                                <span>Wed</span>
-                            </div>
-
-                            <div class="bar" style="height:82%">
-                                <span>Thu</span>
-                            </div>
-
-                            <div class="bar" style="height:58%">
-                                <span>Fri</span>
-                            </div>
-
-                            <div class="bar" style="height:72%">
-                                <span>Sat</span>
-                            </div>
-
-                            <div class="bar today" style="height:42%">
-                                <span>Sun</span>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="card streak-card">
-
-                        <div class="streak-icon">
-                            🌸
-                        </div>
-
-                        <div>
-
-                            <span>
-                                CURRENT STREAK
-                            </span>
-
-                            <h2>
-                                12 days
-                            </h2>
-
-                            <p>
-                                Keep learning every day!
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================= LANGUAGES ================= -->
-
-            <section
-                class="page"
-                id="languagesPage"
-            >
-
-                <div class="page-title">
-
-                    <span class="pink-label">
-                        YOUR LANGUAGES
+                        🇰🇷 KOREAN LEARNING
                     </span>
 
                     <h1>
-                        Languages
+                        Hello,
+                        <span id="welcomeName">
+                            Alex
+                        </span>! 👋
                     </h1>
 
                     <p>
-                        Choose what language you want to learn.
+                        Continue your journey and learn something new today.
                     </p>
 
                 </div>
 
+
+                <div class="language-selector">
+
+                    <span id="headerFlag">
+                        🇰🇷
+                    </span>
+
+                    <div>
+
+                        <strong id="headerLanguage">
+                            Korean
+                        </strong>
+
+                        <small id="headerLevel">
+                            A1 Beginner
+                        </small>
+
+                    </div>
+
+                    <button id="changeLanguage">
+                        Change
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEARNING PATH -->
+
+            <div class="card learning-path">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="pink-label">
+                            YOUR LEARNING PATH
+                        </span>
+
+                        <h2 id="foundationTitle">
+                            Korean Foundations
+                        </h2>
+
+                        <p id="foundationDescription">
+                            Build your language skills step by step.
+                        </p>
+
+                    </div>
+
+                    <span class="path-progress">
+                        2 / 7
+                    </span>
+
+                </div>
+
+
+                <div class="path-list">
+
+                    <div class="path-item completed">
+
+                        <div class="path-number">
+                            ✓
+                        </div>
+
+                        <div class="path-info">
+
+                            <strong id="pathCharacter">
+                                Korean Alphabet
+                            </strong>
+
+                            <span id="characterDescription">
+                                Learn the basic building blocks
+                            </span>
+
+                        </div>
+
+                        <span class="completed-text">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="path-item completed">
+
+                        <div class="path-number">
+                            ✓
+                        </div>
+
+                        <div class="path-info">
+
+                            <strong id="pathVowels">
+                                Korean Vowels
+                            </strong>
+
+                            <span>
+                                Learn basic and compound vowels
+                            </span>
+
+                        </div>
+
+                        <span class="completed-text">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="path-item current">
+
+                        <div class="path-number">
+                            03
+                        </div>
+
+                        <div class="path-info">
+
+                            <strong id="pathConsonants">
+                                Korean Consonants
+                            </strong>
+
+                            <span>
+                                Learn basic consonants
+                            </span>
+
+                            <div class="small-progress">
+                                <div style="width:62%"></div>
+                            </div>
+
+                        </div>
+
+                        <button
+                            class="continue-btn"
+                            onclick="openLesson('consonants')"
+                        >
+                            Continue
+                        </button>
+
+                    </div>
+
+
+                    <div class="path-item locked">
+
+                        <div class="path-number">
+                            04
+                        </div>
+
+                        <div class="path-info">
+
+                            <strong id="pathSyllables">
+                                Korean Syllables
+                            </strong>
+
+                            <span>
+                                Build syllables step by step
+                            </span>
+
+                        </div>
+
+                        <span class="lock">
+                            🔒
+                        </span>
+
+                    </div>
+
+
+                    <div class="path-item locked">
+
+                        <div class="path-number">
+                            05
+                        </div>
+
+                        <div class="path-info">
+
+                            <strong id="pathReading">
+                                Korean Reading
+                            </strong>
+
+                            <span>
+                                Start reading words
+                            </span>
+
+                        </div>
+
+                        <span class="lock">
+                            🔒
+                        </span>
+
+                    </div>
+
+
+                    <div class="path-item locked">
+
+                        <div class="path-number">
+                            06
+                        </div>
+
+                        <div class="path-info">
+
+                            <strong id="pathWriting">
+                                Korean Writing
+                            </strong>
+
+                            <span>
+                                Learn to write
+                            </span>
+
+                        </div>
+
+                        <span class="lock">
+                            🔒
+                        </span>
+
+                    </div>
+
+
+                    <div class="path-item locked">
+
+                        <div class="path-number">
+                            07
+                        </div>
+
+                        <div class="path-info">
+
+                            <strong id="pathConversation">
+                                Basic Korean Conversation
+                            </strong>
+
+                            <span>
+                                Use what you've learned
+                            </span>
+
+                        </div>
+
+                        <span class="lock">
+                            🔒
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRACTICE -->
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Today's practice
+                    </h2>
+
+                    <p>
+                        Practice different parts of your language skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="practice-grid">
+
+                <div
+                    class="practice-card"
+                    onclick="openLesson('pronunciation')"
+                >
+
+                    <div class="practice-icon pink">
+                        🔊
+                    </div>
+
+                    <strong>
+                        Hear it
+                    </strong>
+
+                    <span>
+                        Practice sounds
+                    </span>
+
+                    <b>
+                        5 min →
+                    </b>
+
+                </div>
+
+
+                <div
+                    class="practice-card"
+                    onclick="openLesson('writing')"
+                >
+
+                    <div class="practice-icon purple">
+                        ✍
+                    </div>
+
+                    <strong>
+                        Write it
+                    </strong>
+
+                    <span>
+                        Practice writing
+                    </span>
+
+                    <b>
+                        10 min →
+                    </b>
+
+                </div>
+
+
+                <div
+                    class="practice-card"
+                    onclick="openLesson('speaking')"
+                >
+
+                    <div class="practice-icon blue">
+                        🎤
+                    </div>
+
+                    <strong>
+                        Say it
+                    </strong>
+
+                    <span>
+                        Practice speaking
+                    </span>
+
+                    <b>
+                        8 min →
+                    </b>
+
+                </div>
+
+
+                <div
+                    class="practice-card"
+                    onclick="openLesson('reading')"
+                >
+
+                    <div class="practice-icon green">
+                        📖
+                    </div>
+
+                    <strong>
+                        Read it
+                    </strong>
+
+                    <span>
+                        Practice reading
+                    </span>
+
+                    <b>
+                        10 min →
+                    </b>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="dashboard-grid">
 
                 <div class="card">
 
@@ -766,588 +662,694 @@
                         <div>
 
                             <h2>
-                                My languages
+                                Your activity
                             </h2>
 
                             <p>
-                                Your current learning languages.
+                                Learning time this week
                             </p>
 
                         </div>
 
-                        <button
-                            class="primary-btn"
-                            onclick="showLanguageChooser()"
-                        >
-                            + Add language
-                        </button>
+                        <strong class="pink-number">
+                            4h 25m
+                        </strong>
 
                     </div>
 
 
-                    <div
-                        class="my-languages"
-                        id="myLanguages"
-                    ></div>
+                    <div class="chart">
 
-                </div>
+                        <div class="bar" style="height:45%">
+                            <span>Mon</span>
+                        </div>
 
-            </section>
+                        <div class="bar" style="height:65%">
+                            <span>Tue</span>
+                        </div>
 
+                        <div class="bar" style="height:35%">
+                            <span>Wed</span>
+                        </div>
 
-            <!-- ================= CHOOSE LANGUAGE ================= -->
+                        <div class="bar" style="height:82%">
+                            <span>Thu</span>
+                        </div>
 
-            <section
-                class="page"
-                id="chooseLanguagePage"
-            >
+                        <div class="bar" style="height:58%">
+                            <span>Fri</span>
+                        </div>
 
-                <div class="chooser">
+                        <div class="bar" style="height:72%">
+                            <span>Sat</span>
+                        </div>
 
-                    <button
-                        class="back-btn"
-                        onclick="showPage('languages')"
-                    >
-                        ← Back
-                    </button>
-
-                    <div class="chooser-title">
-
-                        <span class="pink-label">
-                            CHOOSE LANGUAGE
-                        </span>
-
-                        <h1>
-                            Choose a language
-                        </h1>
-
-                        <p>
-                            What language would you like to learn?
-                        </p>
-
-                    </div>
-
-
-                    <div class="language-grid">
-
-                        <button
-                            class="language-option"
-                            data-language="Korean"
-                            data-flag="🇰🇷"
-                        >
-                            <span>🇰🇷</span>
-                            <strong>Korean</strong>
-                            <small>한국어</small>
-                        </button>
-
-
-                        <button
-                            class="language-option"
-                            data-language="Japanese"
-                            data-flag="🇯🇵"
-                        >
-                            <span>🇯🇵</span>
-                            <strong>Japanese</strong>
-                            <small>日本語</small>
-                        </button>
-
-
-                        <button
-                            class="language-option"
-                            data-language="Spanish"
-                            data-flag="🇪🇸"
-                        >
-                            <span>🇪🇸</span>
-                            <strong>Spanish</strong>
-                            <small>Español</small>
-                        </button>
-
-
-                        <button
-                            class="language-option"
-                            data-language="French"
-                            data-flag="🇫🇷"
-                        >
-                            <span>🇫🇷</span>
-                            <strong>French</strong>
-                            <small>Français</small>
-                        </button>
-
-
-                        <button
-                            class="language-option"
-                            data-language="German"
-                            data-flag="🇩🇪"
-                        >
-                            <span>🇩🇪</span>
-                            <strong>German</strong>
-                            <small>Deutsch</small>
-                        </button>
-
-
-                        <button
-                            class="language-option"
-                            data-language="Chinese"
-                            data-flag="🇨🇳"
-                        >
-                            <span>🇨🇳</span>
-                            <strong>Chinese</strong>
-                            <small>中文</small>
-                        </button>
-
-                    </div>
-
-
-                    <button
-                        class="large-btn"
-                        id="languageContinue"
-                        disabled
-                    >
-                        Continue
-                    </button>
-
-                </div>
-
-            </section>
-
-
-            <!-- ================= LEVEL ================= -->
-
-            <section
-                class="page"
-                id="levelPage"
-            >
-
-                <div class="chooser">
-
-                    <button
-                        class="back-btn"
-                        onclick="showPage('chooseLanguage')"
-                    >
-                        ← Back
-                    </button>
-
-
-                    <div class="selected-language">
-
-                        <span id="selectedFlag">
-                            🇰🇷
-                        </span>
-
-                        <div>
-
-                            <strong id="selectedLanguage">
-                                Korean
-                            </strong>
-
-                            <small>
-                                Selected language
-                            </small>
-
+                        <div class="bar today" style="height:42%">
+                            <span>Sun</span>
                         </div>
 
                     </div>
 
+                </div>
 
-                    <div class="chooser-title">
 
-                        <span class="pink-label">
-                            YOUR LEVEL
+                <div class="card streak-card">
+
+                    <div class="streak-icon">
+                        🌸
+                    </div>
+
+                    <div>
+
+                        <span>
+                            CURRENT STREAK
                         </span>
 
-                        <h1>
-                            What's your level?
-                        </h1>
+                        <h2>
+                            12 days
+                        </h2>
 
                         <p>
-                            Choose the level that feels right for you.
+                            Keep learning every day!
                         </p>
 
                     </div>
 
+                </div>
 
-                    <div class="level-grid">
+            </div>
 
-                        <button class="level-option" data-level="A1">
-                            <span>A1</span>
-                            <strong>Beginner</strong>
-                            <small>I am just starting.</small>
-                        </button>
+        </section>
 
-                        <button class="level-option" data-level="A2">
-                            <span>A2</span>
-                            <strong>Elementary</strong>
-                            <small>I know some basics.</small>
-                        </button>
 
-                        <button class="level-option" data-level="B1">
-                            <span>B1</span>
-                            <strong>Intermediate</strong>
-                            <small>I can manage everyday situations.</small>
-                        </button>
+        <!-- ================= LANGUAGES ================= -->
 
-                        <button class="level-option" data-level="B2">
-                            <span>B2</span>
-                            <strong>Upper Intermediate</strong>
-                            <small>I can communicate confidently.</small>
-                        </button>
+        <section
+            class="page"
+            id="languagesPage"
+        >
 
-                        <button class="level-option" data-level="C1">
-                            <span>C1</span>
-                            <strong>Advanced</strong>
-                            <small>I can discuss complex topics.</small>
-                        </button>
+            <div class="page-title">
 
-                        <button class="level-option" data-level="C2">
-                            <span>C2</span>
-                            <strong>Proficient</strong>
-                            <small>I understand almost everything.</small>
-                        </button>
+                <span class="pink-label">
+                    YOUR LANGUAGES
+                </span>
+
+                <h1>
+                    Languages
+                </h1>
+
+                <p>
+                    Choose what language you want to learn.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            My languages
+                        </h2>
+
+                        <p>
+                            Your current learning languages.
+                        </p>
 
                     </div>
 
-
                     <button
-                        class="large-btn"
-                        id="levelContinue"
-                        disabled
+                        class="primary-btn"
+                        onclick="showLanguageChooser()"
                     >
-                        Start learning
+                        + Add language
                     </button>
 
                 </div>
 
-            </section>
+
+                <div
+                    class="my-languages"
+                    id="myLanguages"
+                ></div>
+
+            </div>
+
+        </section>
 
 
-            <!-- ================= ABOUT ================= -->
+        <!-- ================= CHOOSE LANGUAGE ================= -->
 
-            <section
-                class="page"
-                id="aboutPage"
-            >
+        <section
+            class="page"
+            id="chooseLanguagePage"
+        >
 
-                <div class="lesson-hero">
+            <div class="chooser">
 
-                    <span>ⓘ</span>
+                <button
+                    class="back-btn"
+                    onclick="showPage('languages')"
+                >
+                    ← Back
+                </button>
+
+                <div class="chooser-title">
+
+                    <span class="pink-label">
+                        CHOOSE LANGUAGE
+                    </span>
+
+                    <h1>
+                        Choose a language
+                    </h1>
+
+                    <p>
+                        What language would you like to learn?
+                    </p>
+
+                </div>
+
+
+                <div class="language-grid">
+
+                    <button
+                        class="language-option"
+                        data-language="Korean"
+                        data-flag="🇰🇷"
+                    >
+                        <span>🇰🇷</span>
+                        <strong>Korean</strong>
+                        <small>한국어</small>
+                    </button>
+
+                    <button
+                        class="language-option"
+                        data-language="Japanese"
+                        data-flag="🇯🇵"
+                    >
+                        <span>🇯🇵</span>
+                        <strong>Japanese</strong>
+                        <small>日本語</small>
+                    </button>
+
+                    <button
+                        class="language-option"
+                        data-language="Spanish"
+                        data-flag="🇪🇸"
+                    >
+                        <span>🇪🇸</span>
+                        <strong>Spanish</strong>
+                        <small>Español</small>
+                    </button>
+
+                    <button
+                        class="language-option"
+                        data-language="French"
+                        data-flag="🇫🇷"
+                    >
+                        <span>🇫🇷</span>
+                        <strong>French</strong>
+                        <small>Français</small>
+                    </button>
+
+                    <button
+                        class="language-option"
+                        data-language="German"
+                        data-flag="🇩🇪"
+                    >
+                        <span>🇩🇪</span>
+                        <strong>German</strong>
+                        <small>Deutsch</small>
+                    </button>
+
+                    <button
+                        class="language-option"
+                        data-language="Chinese"
+                        data-flag="🇨🇳"
+                    >
+                        <span>🇨🇳</span>
+                        <strong>Chinese</strong>
+                        <small>中文</small>
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="large-btn"
+                    id="languageContinue"
+                    disabled
+                >
+                    Continue
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LEVEL ================= -->
+
+        <section
+            class="page"
+            id="levelPage"
+        >
+
+            <div class="chooser">
+
+                <button
+                    class="back-btn"
+                    onclick="showPage('chooseLanguage')"
+                >
+                    ← Back
+                </button>
+
+
+                <div class="selected-language">
+
+                    <span id="selectedFlag">
+                        🇰🇷
+                    </span>
+
+                    <div>
+
+                        <strong id="selectedLanguage">
+                            Korean
+                        </strong>
+
+                        <small>
+                            Selected language
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chooser-title">
+
+                    <span class="pink-label">
+                        YOUR LEVEL
+                    </span>
+
+                    <h1>
+                        What's your level?
+                    </h1>
+
+                    <p>
+                        Choose the level that feels right for you.
+                    </p>
+
+                </div>
+
+
+                <div class="level-grid">
+
+                    <button class="level-option" data-level="A1">
+                        <span>A1</span>
+                        <strong>Beginner</strong>
+                        <small>I am just starting.</small>
+                    </button>
+
+                    <button class="level-option" data-level="A2">
+                        <span>A2</span>
+                        <strong>Elementary</strong>
+                        <small>I know some basics.</small>
+                    </button>
+
+                    <button class="level-option" data-level="B1">
+                        <span>B1</span>
+                        <strong>Intermediate</strong>
+                        <small>I can manage everyday situations.</small>
+                    </button>
+
+                    <button class="level-option" data-level="B2">
+                        <span>B2</span>
+                        <strong>Upper Intermediate</strong>
+                        <small>I can communicate confidently.</small>
+                    </button>
+
+                    <button class="level-option" data-level="C1">
+                        <span>C1</span>
+                        <strong>Advanced</strong>
+                        <small>I can discuss complex topics.</small>
+                    </button>
+
+                    <button class="level-option" data-level="C2">
+                        <span>C2</span>
+                        <strong>Proficient</strong>
+                        <small>I understand almost everything.</small>
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="large-btn"
+                    id="levelContinue"
+                    disabled
+                >
+                    Start learning
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section
+            class="page"
+            id="aboutPage"
+        >
+
+            <div class="lesson-hero">
+
+                <span>ⓘ</span>
+
+                <div>
+
+                    <span class="pink-label">
+                        ABOUT TRAGO
+                    </span>
+
+                    <h1>
+                        Learn languages, your way.
+                    </h1>
+
+                    <p>
+                        Trago helps you build a language from the
+                        foundations to real conversation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="about-card">
+
+                    <div class="about-icon">
+                        🌸
+                    </div>
+
+                    <h2>
+                        What is Trago?
+                    </h2>
+
+                    <p>
+                        Trago is a language-learning app designed
+                        to help learners understand a language,
+                        not just memorize words.
+                    </p>
+
+                    <p>
+                        Learn sounds, characters, pronunciation,
+                        reading, writing, vocabulary, grammar,
+                        listening and conversation.
+                    </p>
+
+                </div>
+
+
+                <div class="about-card">
+
+                    <div class="about-icon">
+                        🧩
+                    </div>
+
+                    <h2>
+                        Learn step by step
+                    </h2>
+
+                    <p>
+                        Every language is organized into clear
+                        learning stages.
+                    </p>
+
+                    <div class="about-points">
+
+                        <div>
+                            <span>01</span>
+                            <strong>Sounds</strong>
+                        </div>
+
+                        <div>
+                            <span>02</span>
+                            <strong>Characters</strong>
+                        </div>
+
+                        <div>
+                            <span>03</span>
+                            <strong>Pronunciation</strong>
+                        </div>
+
+                        <div>
+                            <span>04</span>
+                            <strong>Words</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-card wide">
+
+                    <div class="about-icon">
+                        🎯
+                    </div>
+
+                    <h2>
+                        Everything you need to learn
+                    </h2>
+
+                    <p>
+                        Trago combines different learning skills
+                        instead of focusing only on vocabulary.
+                    </p>
+
+                    <div class="skill-tags">
+
+                        <span>🔊 Pronunciation</span>
+                        <span>◉ Vowels</span>
+                        <span>◇ Consonants</span>
+                        <span>▦ Syllables</span>
+                        <span>📖 Reading</span>
+                        <span>✍ Writing</span>
+                        <span>🧠 Vocabulary</span>
+                        <span>📝 Grammar</span>
+                        <span>🎧 Listening</span>
+                        <span>🎤 Speaking</span>
+                        <span>💬 Conversation</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-card wide mission-card">
 
                     <div>
 
                         <span class="pink-label">
-                            ABOUT TRAGO
+                            OUR APPROACH
                         </span>
 
-                        <h1>
-                            Learn languages, your way.
-                        </h1>
-
-                        <p>
-                            Trago helps you build a language from the
-                            foundations to real conversation.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="about-grid">
-
-                    <div class="about-card">
-
-                        <div class="about-icon">
-                            🌸
-                        </div>
-
                         <h2>
-                            What is Trago?
+                            Understand first.
+                            Practice next.
+                            Speak naturally.
                         </h2>
 
                         <p>
-                            Trago is a language-learning app designed
-                            to help learners understand a language,
-                            not just memorize words.
-                        </p>
-
-                        <p>
-                            Learn sounds, characters, pronunciation,
-                            reading, writing, vocabulary, grammar,
-                            listening and conversation.
+                            Trago is built around the idea that
+                            learning a language should feel like
+                            building a skill.
                         </p>
 
                     </div>
 
-
-                    <div class="about-card">
-
-                        <div class="about-icon">
-                            🧩
-                        </div>
-
-                        <h2>
-                            Learn step by step
-                        </h2>
-
-                        <p>
-                            Every language is organized into clear
-                            learning stages.
-                        </p>
-
-                        <div class="about-points">
-
-                            <div>
-                                <span>01</span>
-                                <strong>Sounds</strong>
-                            </div>
-
-                            <div>
-                                <span>02</span>
-                                <strong>Characters</strong>
-                            </div>
-
-                            <div>
-                                <span>03</span>
-                                <strong>Pronunciation</strong>
-                            </div>
-
-                            <div>
-                                <span>04</span>
-                                <strong>Words</strong>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="about-card wide">
-
-                        <div class="about-icon">
-                            🎯
-                        </div>
-
-                        <h2>
-                            Everything you need to learn
-                        </h2>
-
-                        <p>
-                            Trago combines different learning skills
-                            instead of focusing only on vocabulary.
-                        </p>
-
-                        <div class="skill-tags">
-
-                            <span>🔊 Pronunciation</span>
-                            <span>◉ Vowels</span>
-                            <span>◇ Consonants</span>
-                            <span>▦ Syllables</span>
-                            <span>📖 Reading</span>
-                            <span>✍ Writing</span>
-                            <span>🧠 Vocabulary</span>
-                            <span>📝 Grammar</span>
-                            <span>🎧 Listening</span>
-                            <span>🎤 Speaking</span>
-                            <span>💬 Conversation</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="about-card wide mission-card">
-
-                        <div>
-
-                            <span class="pink-label">
-                                OUR APPROACH
-                            </span>
-
-                            <h2>
-                                Understand first.
-                                Practice next.
-                                Speak naturally.
-                            </h2>
-
-                            <p>
-                                Trago is built around the idea that
-                                learning a language should feel like
-                                building a skill.
-                            </p>
-
-                        </div>
-
-                        <div class="mission-symbol">
-                            🌷
-                        </div>
-
+                    <div class="mission-symbol">
+                        🌷
                     </div>
 
                 </div>
 
-            </section>
+            </div>
+
+        </section>
 
 
-            <!-- ================= OTHER PAGES ================= -->
+        <!-- ================= OTHER PAGES ================= -->
 
-            <section class="page placeholder-page" id="vowelsPage">
-                <div>
-                    <span>◉</span>
-                    <h1 id="vowelsTitle">Vowels</h1>
-                    <p id="vowelsDescription">
-                        Learn the vowel sounds of your language.
-                    </p>
-                </div>
-            </section>
-
-
-            <section class="page placeholder-page" id="consonantsPage">
-                <div>
-                    <span>◇</span>
-                    <h1 id="consonantsTitle">Consonants</h1>
-                    <p>
-                        Learn consonants and their sounds.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="vowelsPage">
+            <div>
+                <span>◉</span>
+                <h1 id="vowelsTitle">Vowels</h1>
+                <p id="vowelsDescription">
+                    Learn the vowel sounds of your language.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="pronunciationPage">
-                <div>
-                    <span>🔊</span>
-                    <h1>Pronunciation</h1>
-                    <p>
-                        Practice pronunciation and sounds.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="consonantsPage">
+            <div>
+                <span>◇</span>
+                <h1 id="consonantsTitle">Consonants</h1>
+                <p>
+                    Learn consonants and their sounds.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="syllablesPage">
-                <div>
-                    <span>▦</span>
-                    <h1>Syllables</h1>
-                    <p>
-                        Build syllables and understand how words are formed.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="pronunciationPage">
+            <div>
+                <span>🔊</span>
+                <h1>Pronunciation</h1>
+                <p>
+                    Practice pronunciation and sounds.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="readingPage">
-                <div>
-                    <span>📖</span>
-                    <h1>Reading</h1>
-                    <p>
-                        Build your reading skills step by step.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="syllablesPage">
+            <div>
+                <span>▦</span>
+                <h1>Syllables</h1>
+                <p>
+                    Build syllables and understand how words are formed.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="writingPage">
-                <div>
-                    <span>✍</span>
-                    <h1>Writing</h1>
-                    <p>
-                        Practice writing characters and sentences.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="readingPage">
+            <div>
+                <span>📖</span>
+                <h1>Reading</h1>
+                <p>
+                    Build your reading skills step by step.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="vocabularyPage">
-                <div>
-                    <span>🧠</span>
-                    <h1>Vocabulary</h1>
-                    <p>
-                        Learn useful words and expressions.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="writingPage">
+            <div>
+                <span>✍</span>
+                <h1>Writing</h1>
+                <p>
+                    Practice writing characters and sentences.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="grammarPage">
-                <div>
-                    <span>📝</span>
-                    <h1>Grammar</h1>
-                    <p>
-                        Learn grammar from basic to advanced.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="vocabularyPage">
+            <div>
+                <span>🧠</span>
+                <h1>Vocabulary</h1>
+                <p>
+                    Learn useful words and expressions.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="listeningPage">
-                <div>
-                    <span>🎧</span>
-                    <h1>Listening</h1>
-                    <p>
-                        Train your listening skills.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="grammarPage">
+            <div>
+                <span>📝</span>
+                <h1>Grammar</h1>
+                <p>
+                    Learn grammar from basic to advanced.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="speakingPage">
-                <div>
-                    <span>🎤</span>
-                    <h1>Speaking</h1>
-                    <p>
-                        Practice speaking naturally.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="listeningPage">
+            <div>
+                <span>🎧</span>
+                <h1>Listening</h1>
+                <p>
+                    Train your listening skills.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="conversationPage">
-                <div>
-                    <span>💬</span>
-                    <h1>Conversation</h1>
-                    <p>
-                        Practice real conversations.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="speakingPage">
+            <div>
+                <span>🎤</span>
+                <h1>Speaking</h1>
+                <p>
+                    Practice speaking naturally.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="progressPage">
-                <div>
-                    <span>📊</span>
-                    <h1>Your Progress</h1>
-                    <p>
-                        Track your complete learning journey.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="conversationPage">
+            <div>
+                <span>💬</span>
+                <h1>Conversation</h1>
+                <p>
+                    Practice real conversations.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="achievementsPage">
-                <div>
-                    <span>🏆</span>
-                    <h1>Achievements</h1>
-                    <p>
-                        Celebrate your learning milestones.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="progressPage">
+            <div>
+                <span>📊</span>
+                <h1>Your Progress</h1>
+                <p>
+                    Track your complete learning journey.
+                </p>
+            </div>
+        </section>
 
 
-            <section class="page placeholder-page" id="settingsPage">
-                <div>
-                    <span>⚙️</span>
-                    <h1>Settings</h1>
-                    <p>
-                        Manage your Trago account.
-                    </p>
-                </div>
-            </section>
+        <section class="page placeholder-page" id="achievementsPage">
+            <div>
+                <span>🏆</span>
+                <h1>Achievements</h1>
+                <p>
+                    Celebrate your learning milestones.
+                </p>
+            </div>
+        </section>
 
-        </div>
 
-    </main>
+        <section class="page placeholder-page" id="settingsPage">
+            <div>
+                <span>⚙️</span>
+                <h1>Settings</h1>
+                <p>
+                    Manage your Trago account.
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+</main>
+```
 
 </div>
-
 
 <script src="Dashboard.js"></script>
 
