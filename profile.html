@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,29 +12,34 @@
 
 <body>
 
-<div class="profile-page">
+<div class="profile-container">
 
-    <!-- Header -->
-    <header class="profile-header">
+    <!-- ================= BACK BUTTON ================= -->
 
-        <a href="dashboard.html" class="back-btn">
-            ←
-        </a>
-
-        <h1>My Profile</h1>
-
-        <div class="header-space"></div>
-
-    </header>
+    <a href="Dashboard.html" class="back-btn">
+        ←
+    </a>
 
 
-    <!-- Profile Card -->
-    <section class="profile-card">
+    <!-- ================= PROFILE HEADER ================= -->
+
+    <div class="profile-header">
 
         <div class="profile-photo-container">
 
-            <div class="profile-photo" id="profilePhoto">
-                👤
+            <div class="profile-photo" id="profilePhotoContainer">
+
+                <img
+                    id="profilePhoto"
+                    src=""
+                    alt="Profile Photo"
+                    style="display: none;"
+                >
+
+                <span id="profileAvatar">
+                    A
+                </span>
+
             </div>
 
             <label for="photoInput" class="camera-btn">
@@ -49,61 +55,86 @@
 
         </div>
 
-        <h2 id="displayName">Your Name</h2>
 
-        <p id="displayEmail">
-            your@email.com
-        </p>
+        <div class="profile-info">
 
-        <button class="edit-profile-btn" onclick="toggleEdit()">
-            ✏️ Edit Profile
-        </button>
+            <h1 id="displayName">
+                Alex
+            </h1>
 
-    </section>
+            <p id="displayEmail">
+                example@gmail.com
+            </p>
+
+            <span>
+                Language Learner
+            </span>
+
+        </div>
+
+    </div>
 
 
-    <!-- Personal Information -->
+    <!-- ================= EDIT PROFILE ================= -->
 
-    <section class="settings-section">
+    <div class="profile-card">
 
-        <h2>Personal Information</h2>
+        <div class="card-header">
 
-        <div class="setting-card">
+            <div>
+                <span class="section-label">
+                    ACCOUNT
+                </span>
 
-            <div class="setting-icon">
-                👤
+                <h2>
+                    Personal Information
+                </h2>
+
+                <p>
+                    Update your personal information.
+                </p>
             </div>
 
-            <div class="setting-content">
+            <button
+                type="button"
+                class="edit-btn"
+                onclick="enableEditing()"
+                id="editButton"
+            >
+                Edit Profile
+            </button>
 
-                <label>Profile Name</label>
+        </div>
+
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label for="nameInput">
+                    Full Name
+                </label>
 
                 <input
                     type="text"
                     id="nameInput"
-                    value="Your Name"
+                    placeholder="Enter your name"
                     disabled
                 >
 
             </div>
 
-        </div>
 
+            <div class="form-group">
 
-        <div class="setting-card">
-
-            <div class="setting-icon">
-                📧
-            </div>
-
-            <div class="setting-content">
-
-                <label>Email Address</label>
+                <label for="emailInput">
+                    Email Address
+                </label>
 
                 <input
                     type="email"
                     id="emailInput"
-                    value="your@email.com"
+                    placeholder="Enter your email"
                     disabled
                 >
 
@@ -111,52 +142,65 @@
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- Learning Preferences -->
+    <!-- ================= LEARNING PREFERENCES ================= -->
 
-    <section class="settings-section">
+    <div class="profile-card">
 
-        <h2>Learning Preferences</h2>
+        <div class="card-header">
 
-        <div class="setting-card">
+            <div>
 
-            <div class="setting-icon">
-                🌍
+                <span class="section-label">
+                    LEARNING
+                </span>
+
+                <h2>
+                    Learning Preferences
+                </h2>
+
+                <p>
+                    Customize your language learning experience.
+                </p>
+
             </div>
 
-            <div class="setting-content">
+        </div>
 
-                <label>Current Language</label>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label for="languageInput">
+                    Learning Language
+                </label>
 
                 <select id="languageInput" disabled>
 
-                    <option value="korean">
+                    <option value="Korean">
                         🇰🇷 Korean
                     </option>
 
-                    <option value="english">
-                        🇺🇸 English
-                    </option>
-
-                    <option value="spanish">
-                        🇪🇸 Spanish
-                    </option>
-
-                    <option value="french">
-                        🇫🇷 French
-                    </option>
-
-                    <option value="german">
-                        🇩🇪 German
-                    </option>
-
-                    <option value="japanese">
+                    <option value="Japanese">
                         🇯🇵 Japanese
                     </option>
 
-                    <option value="chinese">
+                    <option value="Spanish">
+                        🇪🇸 Spanish
+                    </option>
+
+                    <option value="French">
+                        🇫🇷 French
+                    </option>
+
+                    <option value="German">
+                        🇩🇪 German
+                    </option>
+
+                    <option value="Chinese">
                         🇨🇳 Chinese
                     </option>
 
@@ -164,51 +208,71 @@
 
             </div>
 
-        </div>
 
+            <div class="form-group">
 
-        <div class="setting-card">
-
-            <div class="setting-icon">
-                📈
-            </div>
-
-            <div class="setting-content">
-
-                <label>Learning Level</label>
+                <label for="levelInput">
+                    Current Level
+                </label>
 
                 <select id="levelInput" disabled>
 
-                    <option>Beginner</option>
-                    <option>Elementary</option>
-                    <option>Intermediate</option>
-                    <option>Upper Intermediate</option>
-                    <option>Advanced</option>
+                    <option value="A1 Beginner">
+                        A1 Beginner
+                    </option>
+
+                    <option value="A2 Elementary">
+                        A2 Elementary
+                    </option>
+
+                    <option value="B1 Intermediate">
+                        B1 Intermediate
+                    </option>
+
+                    <option value="B2 Upper Intermediate">
+                        B2 Upper Intermediate
+                    </option>
+
+                    <option value="C1 Advanced">
+                        C1 Advanced
+                    </option>
+
+                    <option value="C2 Proficient">
+                        C2 Proficient
+                    </option>
 
                 </select>
 
             </div>
 
-        </div>
 
+            <div class="form-group full-width">
 
-        <div class="setting-card">
-
-            <div class="setting-icon">
-                🎯
-            </div>
-
-            <div class="setting-content">
-
-                <label>Daily Learning Goal</label>
+                <label for="goalInput">
+                    Learning Goal
+                </label>
 
                 <select id="goalInput" disabled>
 
-                    <option>10 minutes</option>
-                    <option>20 minutes</option>
-                    <option>30 minutes</option>
-                    <option>45 minutes</option>
-                    <option>60 minutes</option>
+                    <option value="Travel">
+                        ✈️ Travel
+                    </option>
+
+                    <option value="Study">
+                        🎓 Study
+                    </option>
+
+                    <option value="Career">
+                        💼 Career
+                    </option>
+
+                    <option value="Conversation">
+                        💬 Conversation
+                    </option>
+
+                    <option value="Personal">
+                        🌱 Personal Growth
+                    </option>
 
                 </select>
 
@@ -216,27 +280,27 @@
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- Notifications -->
+    <!-- ================= NOTIFICATIONS ================= -->
 
-    <section class="settings-section">
+    <div class="profile-card">
 
-        <h2>Notifications</h2>
+        <div class="setting-row">
 
-        <div class="setting-card notification-card">
+            <div>
 
-            <div class="setting-icon">
-                🔔
-            </div>
+                <span class="section-label">
+                    NOTIFICATIONS
+                </span>
 
-            <div class="setting-content">
-
-                <label>Learning Reminders</label>
+                <h2>
+                    Learning Reminders
+                </h2>
 
                 <p>
-                    Get reminders to keep your learning streak.
+                    Receive reminders to continue learning.
                 </p>
 
             </div>
@@ -255,51 +319,555 @@
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- Account Settings -->
+    <!-- ================= ACCOUNT SETTINGS ================= -->
 
-    <section class="settings-section">
+    <div class="profile-card">
 
-        <h2>Account Settings</h2>
+        <div class="card-header">
 
-        <div class="action-card">
+            <div>
 
-            <button onclick="changeLanguage()">
-                🌍 Change Language
-                <span>→</span>
+                <span class="section-label">
+                    ACCOUNT SETTINGS
+                </span>
+
+                <h2>
+                    Account
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="account-buttons">
+
+            <button
+                type="button"
+                onclick="changeLanguage()"
+            >
+                🌐 Change Language
             </button>
 
-            <button onclick="changePassword()">
+            <button
+                type="button"
+                onclick="changePassword()"
+            >
                 🔒 Change Password
-                <span>→</span>
             </button>
 
-            <button onclick="logout()" class="logout-btn">
-                🚪 Logout
-                <span>→</span>
+            <button
+                type="button"
+                class="logout-btn"
+                onclick="logout()"
+            >
+                ↪ Logout
             </button>
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- Save button -->
+    <!-- ================= SAVE BUTTON ================= -->
 
-    <button
-        id="saveBtn"
-        class="save-btn"
-        onclick="saveProfile()"
-        style="display: none;"
-    >
-        Save Changes
-    </button>
+    <div class="save-container">
+
+        <button
+            type="button"
+            class="save-btn"
+            onclick="saveProfile()"
+            id="saveButton"
+            disabled
+        >
+            Save Changes
+        </button>
+
+    </div>
 
 </div>
 
-<script src="profile.js"></script>
+
+<!-- ================= PROFILE JAVASCRIPT ================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    loadProfile();
+
+    // Load saved profile photo
+    const savedPhoto =
+        localStorage.getItem("profilePhoto");
+
+    if (savedPhoto) {
+
+        const profilePhoto =
+            document.getElementById("profilePhoto");
+
+        const profileAvatar =
+            document.getElementById("profileAvatar");
+
+        profilePhoto.src = savedPhoto;
+
+        profilePhoto.style.display = "block";
+
+        profileAvatar.style.display = "none";
+    }
+
+});
+
+
+/* =====================================================
+   LOAD PROFILE
+===================================================== */
+
+function loadProfile() {
+
+    const userEmail =
+        localStorage.getItem("userEmail") || "";
+
+
+    if (!userEmail) {
+
+        window.location.href = "login.html";
+
+        return;
+
+    }
+
+
+    /*
+     * FIRST check the permanent profile name.
+     *
+     * This is the important part.
+     */
+
+    const savedProfileName =
+        localStorage.getItem(
+            "profileName_" + userEmail
+        );
+
+
+    let userName;
+
+
+    if (savedProfileName) {
+
+        // Use edited name
+        userName = savedProfileName;
+
+    } else {
+
+        // Otherwise use current login name
+        userName =
+            localStorage.getItem("userName") ||
+            getNameFromEmail(userEmail);
+
+    }
+
+
+    // Personal information
+
+    document.getElementById("nameInput").value =
+        userName;
+
+    document.getElementById("emailInput").value =
+        userEmail;
+
+
+    // Profile header
+
+    document.getElementById("displayName").textContent =
+        userName || "User";
+
+    document.getElementById("displayEmail").textContent =
+        userEmail || "No email";
+
+
+    // Avatar
+
+    const firstLetter =
+        userName.charAt(0).toUpperCase() || "A";
+
+    document.getElementById("profileAvatar").textContent =
+        firstLetter;
+
+
+    // Learning preferences
+
+    const savedLanguage =
+        localStorage.getItem("learningLanguage");
+
+    const savedLevel =
+        localStorage.getItem("learningLevel");
+
+    const savedGoal =
+        localStorage.getItem("learningGoal");
+
+
+    if (savedLanguage) {
+
+        document.getElementById("languageInput").value =
+            savedLanguage;
+
+    }
+
+
+    if (savedLevel) {
+
+        document.getElementById("levelInput").value =
+            savedLevel;
+
+    }
+
+
+    if (savedGoal) {
+
+        document.getElementById("goalInput").value =
+            savedGoal;
+
+    }
+
+}
+
+
+/* =====================================================
+   GET NAME FROM EMAIL
+===================================================== */
+
+function getNameFromEmail(email) {
+
+    if (!email) {
+        return "User";
+    }
+
+
+    const namePart =
+        email.split("@")[0];
+
+
+    return namePart
+        .replace(/[._-]/g, " ")
+        .replace(/\b\w/g, function(letter) {
+            return letter.toUpperCase();
+        });
+
+}
+
+
+/* =====================================================
+   ENABLE EDITING
+===================================================== */
+
+function enableEditing() {
+
+    document.getElementById("nameInput").disabled =
+        false;
+
+    document.getElementById("languageInput").disabled =
+        false;
+
+    document.getElementById("levelInput").disabled =
+        false;
+
+    document.getElementById("goalInput").disabled =
+        false;
+
+
+    document.getElementById("saveButton").disabled =
+        false;
+
+
+    document.getElementById("editButton").textContent =
+        "Editing...";
+
+}
+
+
+/* =====================================================
+   SAVE PROFILE
+===================================================== */
+
+function saveProfile() {
+
+    const name =
+        document.getElementById("nameInput")
+        .value
+        .trim();
+
+
+    const email =
+        document.getElementById("emailInput")
+        .value
+        .trim();
+
+
+    const language =
+        document.getElementById("languageInput").value;
+
+
+    const level =
+        document.getElementById("levelInput").value;
+
+
+    const goal =
+        document.getElementById("goalInput").value;
+
+
+    // Validate name
+
+    if (!name) {
+
+        alert("Please enter your name.");
+
+        return;
+
+    }
+
+
+    // Validate email
+
+    if (!email) {
+
+        alert("Please enter your email.");
+
+        return;
+
+    }
+
+
+    /*
+     * ==========================================
+     * SAVE PERMANENT PROFILE NAME
+     * ==========================================
+     *
+     * This is the key that login.html also checks.
+     *
+     * Example:
+     *
+     * profileName_tapasyawrt18@gmail.com
+     *
+     * = Tapasya Rawat
+     */
+
+    localStorage.setItem(
+        "profileName_" + email,
+        name
+    );
+
+
+    /*
+     * Save current session information too.
+     */
+
+    localStorage.setItem(
+        "userName",
+        name
+    );
+
+    localStorage.setItem(
+        "userEmail",
+        email
+    );
+
+    localStorage.setItem(
+        "userAvatar",
+        name.charAt(0).toUpperCase()
+    );
+
+
+    // Save learning preferences
+
+    localStorage.setItem(
+        "learningLanguage",
+        language
+    );
+
+    localStorage.setItem(
+        "learningLevel",
+        level
+    );
+
+    localStorage.setItem(
+        "learningGoal",
+        goal
+    );
+
+
+    // Update profile display
+
+    document.getElementById("displayName").textContent =
+        name;
+
+    document.getElementById("displayEmail").textContent =
+        email;
+
+    document.getElementById("profileAvatar").textContent =
+        name.charAt(0).toUpperCase();
+
+
+    // Disable editing
+
+    document.getElementById("nameInput").disabled =
+        true;
+
+    document.getElementById("languageInput").disabled =
+        true;
+
+    document.getElementById("levelInput").disabled =
+        true;
+
+    document.getElementById("goalInput").disabled =
+        true;
+
+
+    document.getElementById("saveButton").disabled =
+        true;
+
+
+    document.getElementById("editButton").textContent =
+        "Edit Profile";
+
+
+    alert("Profile updated successfully!");
+
+}
+
+
+/* =====================================================
+   PROFILE PHOTO
+===================================================== */
+
+document.getElementById("photoInput").addEventListener(
+    "change",
+    function(event) {
+
+        const file =
+            event.target.files[0];
+
+
+        if (!file) {
+            return;
+        }
+
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload =
+            function(e) {
+
+                const image =
+                    document.getElementById("profilePhoto");
+
+                const avatar =
+                    document.getElementById("profileAvatar");
+
+
+                image.src =
+                    e.target.result;
+
+                image.style.display =
+                    "block";
+
+                avatar.style.display =
+                    "none";
+
+
+                localStorage.setItem(
+                    "profilePhoto",
+                    e.target.result
+                );
+
+            };
+
+
+        reader.readAsDataURL(file);
+
+    }
+);
+
+
+/* =====================================================
+   CHANGE LANGUAGE
+===================================================== */
+
+function changeLanguage() {
+
+    document.getElementById("languageInput").disabled =
+        false;
+
+
+    document.getElementById("languageInput").focus();
+
+
+    document.getElementById("saveButton").disabled =
+        false;
+
+}
+
+
+/* =====================================================
+   CHANGE PASSWORD
+===================================================== */
+
+function changePassword() {
+
+    alert(
+        "Password change will be available soon."
+    );
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout() {
+
+    const confirmLogout =
+        confirm("Are you sure you want to logout?");
+
+
+    if (!confirmLogout) {
+        return;
+    }
+
+
+    /*
+     * IMPORTANT:
+     *
+     * Remove only the current LOGIN SESSION.
+     *
+     * DO NOT remove:
+     *
+     * profileName_email
+     *
+     * because that contains the user's
+     * permanently edited name.
+     */
+
+    localStorage.removeItem("userEmail");
+
+    localStorage.removeItem("userName");
+
+    localStorage.removeItem("userAvatar");
+
+
+    // Go to login
+
+    window.location.href =
+        "login.html";
+
+}
+
+</script>
 
 </body>
 </html>
